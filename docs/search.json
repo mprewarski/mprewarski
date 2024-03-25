@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I’m a software engineer and now a machine learning ethusiast. The main topic will be Marchine Learning. I’m going to share stuff I’m working on or find interesting."
+  },
+  {
+    "objectID": "posts/img_to_img/img_to_img.html",
+    "href": "posts/img_to_img/img_to_img.html",
+    "title": "Image to image with Stable Diffusion",
+    "section": "",
+    "text": "This notebook performs an image to image transform using stable diffusion. This is one of the suggested homework assignments from lecture 10 of the Fast AI course\nSeveral parts of this code are borrowed from other notebooks found here https://github.com/fastai/diffusion-nbs. And parts of that comes from the Huggingface example notebook."
+  },
+  {
+    "objectID": "posts/img_to_img/img_to_img.html#view-the-latents-vith-various-ammounts-of-noise",
+    "href": "posts/img_to_img/img_to_img.html#view-the-latents-vith-various-ammounts-of-noise",
+    "title": "Image to image with Stable Diffusion",
+    "section": "View the latents vith various ammounts of noise",
+    "text": "View the latents vith various ammounts of noise\nWe will begin the img to img transformation with the starting image with various amounts of noise added to it. The loop will remove the noise as it converges on an image from the prompt we provide.\nLooking at the latents below, I don’t see much image structure until the 3rd image which is would be step 20 out of 50, so that may be a good starting point.\n\nnoise = torch.randn_like(encoded)\n\n\nfig, axs = plt.subplots(1, 4, figsize=(16, 4))\nfor i in range(4):\n    sampling_step = i * 10\n    encoded_and_noised = scheduler.add_noise(encoded, noise, timesteps=torch.tensor([scheduler.timesteps[sampling_step]]))\n    img = latents_to_pil(encoded_and_noised.float())[0]\n    axs[i].imshow(img)"
+  },
+  {
+    "objectID": "save_README.html",
+    "href": "save_README.html",
+    "title": "Marcus Prewarski",
+    "section": "",
+    "text": "Hi there 👋"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Marcus Prewarski",
+    "section": "",
+    "text": "Image to image with Stable Diffusion\n\n\n\n\n\n\n\nStableDiffusion\n\n\nFastAI\n\n\n\n\n\n\n\n\n\n\n\nMar 24, 2024\n\n\n\n\n\n\nNo matching items"
+  }
+]
